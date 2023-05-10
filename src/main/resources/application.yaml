@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/InterviewRequestManagerDB
+    username: interview-manager
+    password: secret
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+kafka:
+  consumer:
+    user:
+      topic: test
+      group: testConsumerGroup
