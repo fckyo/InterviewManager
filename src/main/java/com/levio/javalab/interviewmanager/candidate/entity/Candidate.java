@@ -1,11 +1,21 @@
 package com.levio.javalab.interviewmanager.candidate.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
+@Table(name = "candidate")
 public class Candidate {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "candidate_id")
     private Long id;
 
     @Column(name = "name")
@@ -17,15 +27,7 @@ public class Candidate {
     @Column(name = "email")
     private String email;
 
-    public Candidate(){}
     public Candidate(Long id){
         this.id = id;
-    }
-
-    public Candidate(Long id, String name, String lastName, String email){
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.email = email;
     }
 }

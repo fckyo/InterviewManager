@@ -1,11 +1,18 @@
 package com.levio.javalab.interviewmanager.recruiter.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
+@Table(name = "recruiter")
 public class Recruiter {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "recruiter_id")
     private Long id;
 
     @Column(name = "name")
@@ -17,16 +24,8 @@ public class Recruiter {
     @Column(name = "email")
     private String email;
 
-    public Recruiter(){}
-
     public Recruiter(Long id){
         this.id = id;
-    }
-
-    public Recruiter(Long id, String name, String lastName, String email){
-        this.id = id;
-        this.name = lastName;
-        this.email = email;
     }
 
 }

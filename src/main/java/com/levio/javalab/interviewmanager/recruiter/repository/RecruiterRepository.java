@@ -1,9 +1,9 @@
 package com.levio.javalab.interviewmanager.recruiter.repository;
 
 import com.levio.javalab.interviewmanager.recruiter.entity.Recruiter;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
-public interface RecruiterRepository extends CrudRepository<Recruiter, Long> {
+@RepositoryRestResource(path = "recruiter")
+public interface RecruiterRepository extends JpaRepository<Recruiter, Long> {
 }

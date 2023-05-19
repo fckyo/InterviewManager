@@ -1,32 +1,46 @@
 package com.levio.javalab.interviewmanager.job.entity;
 
 import com.levio.javalab.interviewmanager.audit.entity.AuditableEntity;
-import com.levio.javalab.interviewmanager.linebusiness.LineBusiness;
+import com.levio.javalab.interviewmanager.linebusiness.entity.LineBusiness;
+import com.levio.javalab.interviewmanager.techadvisor.entity.TechnicalAdvisorJobPosition;
 import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.envers.AuditOverride;
+import org.hibernate.envers.Audited;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.lang.NonNull;
+
+import java.util.Set;
 
 @Entity
+@Table(name = "job_position")
+@EntityListeners(AuditingEntityListener.class)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
+@EqualsAndHashCode
+@Audited
+@AuditOverride(forClass = AuditableEntity.class)
 public class JobPosition extends AuditableEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "job_position_id")
     private Long id;
 
     @Column(name="description")
+    @NonNull
     private String description;
+
     @ManyToOne
+    @NonNull
+    @JoinColumn(name = "line_business_id")
     private LineBusiness lineBusiness;
-    @ManyToOne
-    private JobPosition superior;
 
-    public JobPosition(){};
+    @Column(name = "job_position_superior")
+    private Long superiorId;
 
-    public JobPosition(Long id){
-        this.id = id;
-    }
+    @OneToMany(mappedBy = "jobPosition")
+    private Set<TechnicalAdvisorJobPosition> technicalAdvisors;
 
-    public JobPosition(Long id, String description, LineBusiness lineBusiness, JobPosition superior){
-        this.id = id;
-        this.description = description;
-        this.lineBusiness = lineBusiness;
-        this.superior = superior;
-    }
 }

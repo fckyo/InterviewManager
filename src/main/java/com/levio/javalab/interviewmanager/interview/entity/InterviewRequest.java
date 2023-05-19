@@ -4,11 +4,24 @@ import com.levio.javalab.interviewmanager.audit.entity.AuditableEntity;
 import com.levio.javalab.interviewmanager.job.entity.JobPosition;
 import com.levio.javalab.interviewmanager.recruiter.entity.Recruiter;
 import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.envers.AuditOverride;
+import org.hibernate.envers.Audited;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
+@Getter
+@Setter
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Audited
+@AuditOverride(forClass = AuditableEntity.class)
 public class InterviewRequest extends AuditableEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "interview_request_id")
     private Long id;
 
     @ManyToOne
@@ -29,20 +42,8 @@ public class InterviewRequest extends AuditableEntity {
     @Column(name = "description")
     private String description;
 
-    public InterviewRequest() {}
-
     public InterviewRequest(Long id){
         this.id = id;
-    }
-
-    public InterviewRequest(Long id, JobPosition jobPosition, Recruiter recruiter, Boolean urgent, Long duration, String status, String description){
-        this.id = id;
-        this.jobPosition = jobPosition;
-        this.recruiter = recruiter;
-        this.urgent = urgent;
-        this.duration = duration;
-        this.status = status;
-        this.description = description;
     }
 
 }
