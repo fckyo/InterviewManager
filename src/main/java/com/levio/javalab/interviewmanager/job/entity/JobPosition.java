@@ -2,6 +2,7 @@ package com.levio.javalab.interviewmanager.job.entity;
 
 import com.levio.javalab.interviewmanager.audit.entity.AuditableEntity;
 import com.levio.javalab.interviewmanager.linebusiness.entity.LineBusiness;
+import com.levio.javalab.interviewmanager.techadvisor.entity.TechnicalAdvisor;
 import com.levio.javalab.interviewmanager.techadvisor.entity.TechnicalAdvisorJobPosition;
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,10 +18,9 @@ import java.util.Set;
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
+@Setter
+@Getter
 @EqualsAndHashCode
-@Audited
 @AuditOverride(forClass = AuditableEntity.class)
 public class JobPosition extends AuditableEntity {
     @Id
@@ -29,18 +29,16 @@ public class JobPosition extends AuditableEntity {
     private Long id;
 
     @Column(name="description")
-    @NonNull
     private String description;
 
     @ManyToOne
-    @NonNull
     @JoinColumn(name = "line_business_id")
     private LineBusiness lineBusiness;
 
     @Column(name = "job_position_superior")
     private Long superiorId;
 
-    @OneToMany(mappedBy = "jobPosition")
+    @OneToMany(mappedBy = "jobPosition", cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE } )
     private Set<TechnicalAdvisorJobPosition> technicalAdvisors;
 
 }

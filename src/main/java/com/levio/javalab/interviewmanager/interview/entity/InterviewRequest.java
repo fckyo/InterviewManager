@@ -16,7 +16,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Audited
 @AuditOverride(forClass = AuditableEntity.class)
 public class InterviewRequest extends AuditableEntity {
     @Id

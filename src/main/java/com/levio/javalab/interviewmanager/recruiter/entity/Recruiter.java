@@ -6,8 +6,8 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
+@Setter
+@Getter
 @Table(name = "recruiter")
 public class Recruiter {
     @Id
@@ -23,9 +23,5 @@ public class Recruiter {
 
     @Column(name = "email")
     private String email;
-
-    public Recruiter(Long id){
-        this.id = id;
-    }
 
 }

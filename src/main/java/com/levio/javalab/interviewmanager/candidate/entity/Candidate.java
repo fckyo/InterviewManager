@@ -1,16 +1,13 @@
 package com.levio.javalab.interviewmanager.candidate.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
+@Setter
+@Getter
 @Table(name = "candidate")
 public class Candidate {
     @Id

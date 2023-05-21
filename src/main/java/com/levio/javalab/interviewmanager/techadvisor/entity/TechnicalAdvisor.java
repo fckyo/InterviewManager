@@ -2,12 +2,8 @@ package com.levio.javalab.interviewmanager.techadvisor.entity;
 
 import com.levio.javalab.interviewmanager.audit.entity.AuditableEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.envers.AuditOverride;
-import org.hibernate.envers.Audited;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.lang.NonNull;
 
@@ -17,9 +13,8 @@ import java.util.Set;
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
-@Audited
+@Setter
+@Getter
 @AuditOverride(forClass = AuditableEntity.class)
 @Table(name = "technical_advisor")
 public class TechnicalAdvisor extends AuditableEntity {
@@ -43,7 +38,7 @@ public class TechnicalAdvisor extends AuditableEntity {
     @Column(name = "is_active")
     private Boolean active;
 
-    @OneToMany(mappedBy = "technicalAdvisor", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @OneToMany(mappedBy = "technicalAdvisor", cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE })
     private Set<TechnicalAdvisorJobPosition> jobPositions;
 
 }

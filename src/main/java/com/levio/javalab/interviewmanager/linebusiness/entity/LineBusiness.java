@@ -6,8 +6,8 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
+@Setter
+@Getter
 @Table(name = "line_business")
 public class LineBusiness {
     @Id

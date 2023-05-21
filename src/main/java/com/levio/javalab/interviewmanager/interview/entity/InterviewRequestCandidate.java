@@ -17,7 +17,6 @@ import java.util.Date;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Audited
 @AuditOverride(forClass = AuditableEntity.class)
 public class InterviewRequestCandidate extends AuditableEntity {
     @Id
