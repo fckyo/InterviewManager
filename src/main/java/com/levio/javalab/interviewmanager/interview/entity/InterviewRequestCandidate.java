@@ -4,8 +4,6 @@ import com.levio.javalab.interviewmanager.audit.entity.AuditableEntity;
 import com.levio.javalab.interviewmanager.candidate.entity.Candidate;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.envers.AuditOverride;
-import org.hibernate.envers.Audited;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
@@ -17,7 +15,6 @@ import java.util.Date;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@AuditOverride(forClass = AuditableEntity.class)
 public class InterviewRequestCandidate extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

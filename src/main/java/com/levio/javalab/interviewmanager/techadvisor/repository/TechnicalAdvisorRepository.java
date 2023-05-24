@@ -2,8 +2,8 @@ package com.levio.javalab.interviewmanager.techadvisor.repository;
 
 import com.levio.javalab.interviewmanager.techadvisor.entity.TechnicalAdvisor;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
-@RepositoryRestResource(path = "technicalAdvisor")
+@Repository
 public interface TechnicalAdvisorRepository extends JpaRepository<TechnicalAdvisor, Long> {
 }
