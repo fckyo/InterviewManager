@@ -2,8 +2,6 @@ package com.levio.javalab.interviewmanager.candidate.controller;
 
 import com.levio.javalab.interviewmanager.candidate.dto.CandidateDTO;
 import com.levio.javalab.interviewmanager.candidate.service.CandidateService;
-import com.levio.javalab.interviewmanager.techadvisor.dto.TechnicalAdvisorDTO;
-import com.levio.javalab.interviewmanager.techadvisor.service.TechnicalAdvisorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

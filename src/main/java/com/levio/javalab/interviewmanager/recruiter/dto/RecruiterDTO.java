@@ -1,0 +1,17 @@
+package com.levio.javalab.interviewmanager.recruiter.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+public class RecruiterDTO {
+    private Long id;
+    private String name;
+    private String lastName;
+    private String email;
+}
