@@ -33,8 +33,7 @@ public class TechnicalAdvisorController {
         return service.createNew(technicalAdvisorDTO);
     }
 
-    @PutMapping("/{id}")
-    @PostMapping ("/{id}")
+    @RequestMapping(value="/{id}", method={RequestMethod.POST,RequestMethod.PUT})
     public TechnicalAdvisorDTO updateTechnicalAdvisor(@PathVariable Long id, @RequestBody TechnicalAdvisorDTO technicalAdvisorDTO){
         return service.update(id,technicalAdvisorDTO);
     }

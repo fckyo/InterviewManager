@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface TechnicalAdvisorMapper extends EntityToDTOMapper<TechnicalAdvisor, TechnicalAdvisorDTO> {
     @Mapping(target = "id", source = "entity.id")
     @Mapping(target = "name", source = "entity.name")
@@ -36,7 +36,7 @@ public interface TechnicalAdvisorMapper extends EntityToDTOMapper<TechnicalAdvis
     @Mapping(target = "lastName", source = "lastName")
     @Mapping(target = "email", source = "email")
     @Mapping(target = "active", source = "active")
-    @Mapping(target = "currentJobPosition.id", source = "jobPositionId", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "currentJobPosition.id", source = "jobPositionId")
     @Mapping(target = "currentJobPosition.lineBusiness.id", ignore = true)
     TechnicalAdvisor updateExistingEntity(TechnicalAdvisorDTO technicalAdvisorDTO, @MappingTarget TechnicalAdvisor technicalAdvisor);
 }
