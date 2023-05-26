@@ -26,8 +26,7 @@ public class RecruiterController {
 
     @GetMapping("/{id}")
     public RecruiterDTO getCandidate(@PathVariable Long id){
-        return service.findById(id, () -> Optional.of(new RecruiterDTO())
-        );
+        return service.findById(id, RecruiterDTO::new);
     }
 
     @PostMapping

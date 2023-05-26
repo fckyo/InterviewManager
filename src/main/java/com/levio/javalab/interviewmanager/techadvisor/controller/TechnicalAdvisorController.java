@@ -24,8 +24,7 @@ public class TechnicalAdvisorController {
 
     @GetMapping("/{id}")
     public TechnicalAdvisorDTO getTechnicalAdvisor(@PathVariable Long id){
-        return service.findById(id, () -> Optional.of(new TechnicalAdvisorDTO())
-                );
+        return service.findById(id, TechnicalAdvisorDTO::new);
     }
 
     @PostMapping

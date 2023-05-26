@@ -23,8 +23,7 @@ public class CandidateController {
 
     @GetMapping("/{id}")
     public CandidateDTO getCandidate(@PathVariable Long id){
-        return service.findById(id, () -> Optional.of(new CandidateDTO())
-        );
+        return service.findById(id, CandidateDTO::new);
     }
 
     @PostMapping

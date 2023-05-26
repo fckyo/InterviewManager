@@ -10,35 +10,40 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class DefaultCrudServiceImpl<R extends JpaRepository, M extends EntityToDTOMapper,ID,DTO> implements CrudService<ID, DTO> {
+//Tu mets en place des generics dans certaines de tes classes, il faut les utiliser correctement pour éviter d'avoir des types manquants
+public class DefaultCrudServiceImpl<E, R extends JpaRepository<E,ID>, M extends EntityToDTOMapper<E, DTO>,ID,DTO> implements CrudService<ID, DTO> {
     protected R repository;
     protected M mapper;
 
+    //ToDo : Ajout du constructeur avec parametres
+    public DefaultCrudServiceImpl(R repository, M mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
+
     @Override
     public DTO createNew(DTO dto) {
-        return (DTO) mapper.toDTO(repository.save(mapper.toEntity(dto)));
+        return mapper.toDTO(repository.save(mapper.toEntity(dto)));
     }
 
     @Override
     public List<DTO> findAll() {
-        return (List<DTO>) StreamSupport.stream(repository.findAll().spliterator(),false)
+        return StreamSupport.stream(repository.findAll().spliterator(),false)
                 .map(entity -> mapper.toDTO(entity))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public DTO findById(ID id, Supplier defaultValue) {
-        return (DTO) (repository.findById(id)
-                                .flatMap(entity -> Optional.of(mapper.toDTO(entity)))
-                                .or(defaultValue).get());
+    public DTO findById(ID id, Supplier<DTO> defaultValue) {
+        return repository.findById(id)
+                                .map(entity -> mapper.toDTO(entity))
+                                .orElseGet(defaultValue);
     }
 
     @Override
     public DTO update(ID id, DTO dto) {
-        Optional result = repository.findById(id);
-        if(result.isPresent())
-            return (DTO) mapper.toDTO(repository.save(mapper.updateExistingEntity(dto, result.get())));
-        return null;
+        Optional<E> result = repository.findById(id);
+        return result.map(e -> mapper.toDTO(repository.save(mapper.updateExistingEntity(dto, e)))).orElse(null);
     }
 
 }
