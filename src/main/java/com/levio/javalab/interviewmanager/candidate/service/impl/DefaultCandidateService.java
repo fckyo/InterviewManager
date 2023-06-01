@@ -1,6 +1,7 @@
 package com.levio.javalab.interviewmanager.candidate.service.impl;
 
 import com.levio.javalab.interviewmanager.candidate.dto.CandidateDTO;
+import com.levio.javalab.interviewmanager.candidate.entity.Candidate;
 import com.levio.javalab.interviewmanager.candidate.mapper.CandidateMapper;
 import com.levio.javalab.interviewmanager.candidate.repository.CandidateRepository;
 import com.levio.javalab.interviewmanager.candidate.service.CandidateService;
@@ -9,10 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DefaultCandidateService extends DefaultCrudServiceImpl<CandidateRepository, CandidateMapper, Long, CandidateDTO> implements CandidateService {
+public class DefaultCandidateService extends DefaultCrudServiceImpl<CandidateRepository, CandidateMapper, Long, CandidateDTO, Candidate> implements CandidateService {
     @Autowired
     public DefaultCandidateService(CandidateRepository repository, CandidateMapper mapper){
-        this.repository = repository;
-        this.mapper = mapper;
+        super(repository, mapper);
     }
 }

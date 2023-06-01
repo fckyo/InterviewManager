@@ -8,7 +8,7 @@ public interface CrudService<ID, DTO> {
 
     List<DTO> findAll();
 
-    DTO findById(ID id, Supplier defaultValue);
+    DTO findById(ID id, Supplier<DTO> defaultValue);
 
     DTO update(ID id, DTO dto);
 }

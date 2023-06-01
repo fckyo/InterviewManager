@@ -24,8 +24,7 @@ public class LineBusinessController {
 
     @GetMapping("/{id}")
     public LineBusinessDTO getLineBusiness(@PathVariable Long id){
-        return service.findById(id, () -> Optional.of(new LineBusinessDTO())
-        );
+        return service.findById(id, LineBusinessDTO::new);
     }
 
     @PostMapping
