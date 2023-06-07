@@ -1,22 +1,22 @@
-package com.levio.javalab.interviewmanager.config;
+package com.levio.javalab.interviewmanager.job.config;
 
+import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
-import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.DispatcherServlet;
 
 @Configuration
 public class CustomRestMvcConfiguration {
     @Bean
-    public RepositoryRestConfigurer repositoryRestConfigurer() {
+    public DispatcherServlet dispatcherServlet() {
+        return new DispatcherServlet();
+    }
 
-        return new RepositoryRestConfigurer() {
-
-            @Override
-            public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-                config.setBasePath("/api");
-            }
-        };
+    @Bean
+    public ServletRegistrationBean dispatcherServletRegistration() {
+        ServletRegistrationBean registration = new ServletRegistrationBean(dispatcherServlet(), "/api/");
+        registration.setName(DispatcherServletAutoConfiguration.DEFAULT_DISPATCHER_SERVLET_REGISTRATION_BEAN_NAME);
+        return registration;
     }
 }

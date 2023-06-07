@@ -1,8 +1,8 @@
 package com.levio.javalab.interviewmanager.linebusiness.mapper;
 
 import com.levio.javalab.interviewmanager.lang.mapper.EntityToDTOMapper;
-import com.levio.javalab.interviewmanager.linebusiness.dto.LineBusinessDTO;
-import com.levio.javalab.interviewmanager.linebusiness.entity.LineBusiness;
+import com.levio.javalab.interviewmanager.dto.LineBusinessDTO;
+import com.levio.javalab.interviewmanager.entity.LineBusiness;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

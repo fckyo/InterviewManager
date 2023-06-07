@@ -1,8 +1,8 @@
 package com.levio.javalab.interviewmanager.techadvisor.mapper;
 
 import com.levio.javalab.interviewmanager.lang.mapper.EntityToDTOMapper;
-import com.levio.javalab.interviewmanager.techadvisor.dto.TechnicalAdvisorDTO;
-import com.levio.javalab.interviewmanager.techadvisor.entity.TechnicalAdvisor;
+import com.levio.javalab.interviewmanager.dto.TechnicalAdvisorDTO;
+import com.levio.javalab.interviewmanager.entity.TechnicalAdvisor;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
