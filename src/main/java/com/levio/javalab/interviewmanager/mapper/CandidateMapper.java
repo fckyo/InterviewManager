@@ -1,4 +1,4 @@
-package com.levio.javalab.interviewmanager.candidate.mapper;
+package com.levio.javalab.interviewmanager.mapper;
 
 import com.levio.javalab.interviewmanager.dto.CandidateDTO;
 import com.levio.javalab.interviewmanager.entity.Candidate;

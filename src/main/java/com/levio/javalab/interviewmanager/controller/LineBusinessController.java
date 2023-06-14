@@ -1,12 +1,10 @@
-package com.levio.javalab.interviewmanager.linebusiness.controller;
+package com.levio.javalab.interviewmanager.controller;
 
-import com.levio.javalab.interviewmanager.candidate.dto.CandidateDTO;
-import com.levio.javalab.interviewmanager.linebusiness.dto.LineBusinessDTO;
-import com.levio.javalab.interviewmanager.linebusiness.service.LineBusinessService;
+import com.levio.javalab.interviewmanager.dto.LineBusinessDTO;
+import com.levio.javalab.interviewmanager.service.LineBusinessService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/lineBusiness")

@@ -19,3 +19,6 @@ kafka:
     user:
       topic: test
       group: testConsumerGroup
+
+server:
+  servlet-path=: /api

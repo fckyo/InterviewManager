@@ -1,11 +1,10 @@
-package com.levio.javalab.interviewmanager.candidate.controller;
+package com.levio.javalab.interviewmanager.controller;
 
-import com.levio.javalab.interviewmanager.candidate.dto.CandidateDTO;
-import com.levio.javalab.interviewmanager.candidate.service.CandidateService;
+import com.levio.javalab.interviewmanager.dto.CandidateDTO;
+import com.levio.javalab.interviewmanager.service.CandidateService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/candidate")

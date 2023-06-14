@@ -1,7 +1,6 @@
-package com.levio.javalab.interviewmanager.techadvisor.entity;
+package com.levio.javalab.interviewmanager.entity;
 
 import com.levio.javalab.interviewmanager.audit.entity.AuditableEntity;
-import com.levio.javalab.interviewmanager.job.entity.JobPosition;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

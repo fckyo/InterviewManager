@@ -1,4 +1,4 @@
-package com.levio.javalab.interviewmanager.candidate.dto;
+package com.levio.javalab.interviewmanager.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

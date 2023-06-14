@@ -1,10 +1,10 @@
-package com.levio.javalab.interviewmanager.candidate.service.impl;
+package com.levio.javalab.interviewmanager.service.impl;
 
-import com.levio.javalab.interviewmanager.candidate.dto.CandidateDTO;
-import com.levio.javalab.interviewmanager.candidate.entity.Candidate;
-import com.levio.javalab.interviewmanager.candidate.mapper.CandidateMapper;
-import com.levio.javalab.interviewmanager.candidate.repository.CandidateRepository;
-import com.levio.javalab.interviewmanager.candidate.service.CandidateService;
+import com.levio.javalab.interviewmanager.dto.CandidateDTO;
+import com.levio.javalab.interviewmanager.entity.Candidate;
+import com.levio.javalab.interviewmanager.mapper.CandidateMapper;
+import com.levio.javalab.interviewmanager.repository.CandidateRepository;
+import com.levio.javalab.interviewmanager.service.CandidateService;
 import com.levio.javalab.interviewmanager.lang.service.impl.DefaultCrudServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

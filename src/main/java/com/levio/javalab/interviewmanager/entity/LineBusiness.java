@@ -1,4 +1,4 @@
-package com.levio.javalab.interviewmanager.linebusiness.entity;
+package com.levio.javalab.interviewmanager.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

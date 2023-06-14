@@ -1,8 +1,6 @@
-package com.levio.javalab.interviewmanager.interview.entity;
+package com.levio.javalab.interviewmanager.entity;
 
 import com.levio.javalab.interviewmanager.audit.entity.AuditableEntity;
-import com.levio.javalab.interviewmanager.job.entity.JobPosition;
-import com.levio.javalab.interviewmanager.recruiter.entity.Recruiter;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;

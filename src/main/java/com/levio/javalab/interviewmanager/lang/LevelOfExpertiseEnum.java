@@ -1,4 +1,4 @@
-package com.levio.javalab.interviewmanager.techadvisor;
+package com.levio.javalab.interviewmanager.lang;
 
 import lombok.Getter;
 

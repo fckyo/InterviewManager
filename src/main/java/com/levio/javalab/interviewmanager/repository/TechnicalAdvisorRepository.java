@@ -1,6 +1,6 @@
-package com.levio.javalab.interviewmanager.techadvisor.repository;
+package com.levio.javalab.interviewmanager.repository;
 
-import com.levio.javalab.interviewmanager.techadvisor.entity.TechnicalAdvisor;
+import com.levio.javalab.interviewmanager.entity.TechnicalAdvisor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

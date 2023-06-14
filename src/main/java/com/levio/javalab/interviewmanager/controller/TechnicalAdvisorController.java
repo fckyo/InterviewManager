@@ -1,11 +1,10 @@
-package com.levio.javalab.interviewmanager.techadvisor.controller;
+package com.levio.javalab.interviewmanager.controller;
 
-import com.levio.javalab.interviewmanager.techadvisor.dto.TechnicalAdvisorDTO;
-import com.levio.javalab.interviewmanager.techadvisor.service.TechnicalAdvisorService;
+import com.levio.javalab.interviewmanager.dto.TechnicalAdvisorDTO;
+import com.levio.javalab.interviewmanager.service.TechnicalAdvisorService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/technicalAdvisor")

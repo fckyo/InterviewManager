@@ -1,6 +1,6 @@
-package com.levio.javalab.interviewmanager.interview.repository;
+package com.levio.javalab.interviewmanager.repository;
 
-import com.levio.javalab.interviewmanager.interview.entity.InterviewRequestTechAdvisor;
+import com.levio.javalab.interviewmanager.entity.InterviewRequestTechAdvisor;
 import org.springframework.data.repository.CrudRepository;
 
 public interface InterviewRequestTechAdvisorRepository extends CrudRepository<InterviewRequestTechAdvisor, String> {

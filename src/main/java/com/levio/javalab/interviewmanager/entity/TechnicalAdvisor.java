@@ -1,14 +1,13 @@
-package com.levio.javalab.interviewmanager.techadvisor.entity;
+package com.levio.javalab.interviewmanager.entity;
 
 import com.levio.javalab.interviewmanager.audit.entity.AuditableEntity;
-import com.levio.javalab.interviewmanager.job.entity.JobPosition;
+import com.levio.javalab.interviewmanager.entity.JobPosition;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.lang.NonNull;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)

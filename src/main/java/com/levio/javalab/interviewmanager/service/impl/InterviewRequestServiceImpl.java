@@ -1,8 +1,8 @@
-package com.levio.javalab.interviewmanager.interview.service.impl;
+package com.levio.javalab.interviewmanager.service.impl;
 
-import com.levio.javalab.interviewmanager.interview.entity.InterviewRequest;
-import com.levio.javalab.interviewmanager.interview.repository.InterviewRequestRepository;
-import com.levio.javalab.interviewmanager.interview.service.InterviewRequestService;
+import com.levio.javalab.interviewmanager.entity.InterviewRequest;
+import com.levio.javalab.interviewmanager.repository.InterviewRequestRepository;
+import com.levio.javalab.interviewmanager.service.InterviewRequestService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

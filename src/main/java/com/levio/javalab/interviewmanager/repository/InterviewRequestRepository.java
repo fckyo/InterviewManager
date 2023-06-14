@@ -1,6 +1,6 @@
-package com.levio.javalab.interviewmanager.interview.repository;
+package com.levio.javalab.interviewmanager.repository;
 
-import com.levio.javalab.interviewmanager.interview.entity.InterviewRequest;
+import com.levio.javalab.interviewmanager.entity.InterviewRequest;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

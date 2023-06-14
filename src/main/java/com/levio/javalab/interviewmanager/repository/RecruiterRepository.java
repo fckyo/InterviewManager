@@ -1,6 +1,6 @@
-package com.levio.javalab.interviewmanager.recruiter.repository;
+package com.levio.javalab.interviewmanager.repository;
 
-import com.levio.javalab.interviewmanager.recruiter.entity.Recruiter;
+import com.levio.javalab.interviewmanager.entity.Recruiter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

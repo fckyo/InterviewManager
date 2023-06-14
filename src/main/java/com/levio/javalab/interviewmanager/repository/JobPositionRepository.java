@@ -1,6 +1,6 @@
-package com.levio.javalab.interviewmanager.job.repository;
+package com.levio.javalab.interviewmanager.repository;
 
-import com.levio.javalab.interviewmanager.job.entity.JobPosition;
+import com.levio.javalab.interviewmanager.entity.JobPosition;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

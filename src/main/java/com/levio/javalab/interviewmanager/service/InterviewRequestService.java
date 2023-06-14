@@ -1,6 +1,6 @@
-package com.levio.javalab.interviewmanager.interview.service;
+package com.levio.javalab.interviewmanager.service;
 
-import com.levio.javalab.interviewmanager.interview.entity.InterviewRequest;
+import com.levio.javalab.interviewmanager.entity.InterviewRequest;
 
 import java.util.List;
 

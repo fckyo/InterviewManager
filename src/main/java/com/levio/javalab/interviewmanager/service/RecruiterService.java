@@ -1,7 +1,7 @@
-package com.levio.javalab.interviewmanager.recruiter.service;
+package com.levio.javalab.interviewmanager.service;
 
 import com.levio.javalab.interviewmanager.lang.service.CrudService;
-import com.levio.javalab.interviewmanager.recruiter.dto.RecruiterDTO;
+import com.levio.javalab.interviewmanager.dto.RecruiterDTO;
 
 public interface RecruiterService extends CrudService<Long, RecruiterDTO> {
 }
