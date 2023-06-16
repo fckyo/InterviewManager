@@ -2,8 +2,8 @@ package com.levio.javalab.interviewmanager.repository;
 
 import com.levio.javalab.interviewmanager.entity.JobPosition;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
-@RepositoryRestResource(path = "job")
+@Repository
 public interface JobPositionRepository extends JpaRepository<JobPosition, Long> {
 }

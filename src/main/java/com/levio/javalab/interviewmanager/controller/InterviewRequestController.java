@@ -1,6 +1,6 @@
 package com.levio.javalab.interviewmanager.controller;
 
-import com.levio.javalab.interviewmanager.entity.InterviewRequest;
+import com.levio.javalab.interviewmanager.dto.InterviewRequestDTO;
 import com.levio.javalab.interviewmanager.service.InterviewRequestService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ public class InterviewRequestController {
     }
 
     @GetMapping
-    public List<InterviewRequest> getInterviews(){
-        return service.getInterviews();
+    public List<InterviewRequestDTO> getInterviews(){
+        return service.findAll();
     }
 }

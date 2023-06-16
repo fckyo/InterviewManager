@@ -20,7 +20,7 @@ public class CandidateController {
         return service.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = {"/{id}", "/test/{id}"})
     public CandidateDTO getCandidate(@PathVariable Long id){
         return service.findById(id, CandidateDTO::new);
     }
